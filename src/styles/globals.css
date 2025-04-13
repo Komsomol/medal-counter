@@ -82,55 +82,54 @@ tr.odd {
 /* Flag styles */
 .flag {
 	display: inline-block;
-	width: 32px;
-	height: 24px;
+	width: 28px;
+	height: 16px;
 	background-image: url('/img/flags.png');
 	background-repeat: no-repeat;
 	margin-right: 8px;
 	vertical-align: middle;
 }
 
-/* Flag positions in sprite */
+/* flag is 16 px apart? */
 .flag-aut {
 	background-position: 0 0;
 }
 .flag-blr {
-	background-position: 0 0px;
+	background-position: 0 -18px;
 }
 .flag-can {
-	background-position: 0 0px;
+	background-position: 0 -36px;
 }
 .flag-chn {
-	background-position: 0 0px;
+	background-position: 0 -54px;
 }
 .flag-fra {
-	background-position: 0 0px;
+	background-position: 0 -72px;
 }
 .flag-ger {
-	background-position: 0 0px;
+	background-position: 0 -85px;
 }
 .flag-ita {
-	background-position: 0 0px;
+	background-position: 0 -108px;
 }
 .flag-ned {
-	background-position: 0 0;
+	background-position: 0 -120px;
 }
 .flag-nor {
-	background-position: 0 0;
+	background-position: 0 -137px;
 }
 .flag-rus {
-	background-position: 0 0;
+	background-position: 0 -154px;
 }
 .flag-sui {
-	background-position: 0 0;
+	background-position: 0 -171px;
 }
 .flag-swe {
-	background-position: 0 0;
+	background-position: 0 -190px;
 }
 .flag-usa {
-	background-position: 0 0;
+	background-position: 0 -208px;
 }
-
 /* Loading and error states */
 .loading,
 .error {
