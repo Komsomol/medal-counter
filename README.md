@@ -1,40 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Medal Count App
+
+A simple Next.js application to display Olympic medal counts with sorting functionality.
+
+## Key Features
+
+-   Display top 10 countries by medal count
+-   Sort by gold, silver, bronze, or total medals
+-   URL parameter-based sorting
+-   Cached data fetching
+-   Simple and clean UI
+
+## Implementation Approach
+
+This project was intentionally kept minimal to demonstrate simplicity while still fulfilling all requirements. The entire application is built with just 3 main files:
+
+1. **medalUtils.ts** - Contains all data fetching and business logic:
+
+    - Medal data fetching with error handling
+    - Data caching to prevent unnecessary refetching
+    - Sorting functionality with proper tiebreakers
+    - Custom React hook for easy state management
+
+2. **api/medals.ts** - Simple API endpoint to serve medal data:
+
+    - Reads from medals.json
+    - Provides proper error handling
+
+3. **index.tsx** - The main page with UI implementation:
+    - URL parameter handling
+    - Table rendering with column sorting
+    - Flag display using sprite sheet
+    - Error and loading states
+
+## Design Decisions
+
+### Simplicity First
+
+The implementation prioritizes simplicity and readability over unnecessary abstractions. By keeping the application in just a few files, it's easy to understand the entire codebase quickly.
+
+### Data Caching
+
+Medal data is fetched once and cached in memory to prevent unnecessary API calls when the sort type changes. This improves performance and user experience.
+
+### Functional Approach
+
+The code uses a functional approach with hooks, making it easy to reason about state changes and side effects.
+
+### URL-Based State
+
+Sort preferences are stored in the URL, allowing for bookmarking and sharing specific views.
+
+## Future Improvements
+
+If expanding this project in the future, I would consider:
+
+1. **Testing** - Add Jest tests for utility functions and React Testing Library tests for components
+2. **Responsive Design Enhancements** - Improve mobile experience with responsive table design
+3. **Accessibility** - Add ARIA attributes and keyboard navigation support
+4. **Flag Implementation** - Improve flag sprite calculation for more accurate display
+5. **Error Recovery** - Add retry mechanisms for failed API calls
+6. **Performance Metrics** - Add analytics to measure and improve performance
+7. **Internationalization** - Support for multiple languages
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run the development server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+-   Next.js
+-   TypeScript
+-   React Hooks
